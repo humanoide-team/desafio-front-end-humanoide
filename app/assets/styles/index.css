@@ -89,6 +89,7 @@ body {
   background-repeat: repeat-x, repeat-x, no-repeat;
   background-position: top -55px left 0, bottom -55px left 0, center;
   min-height: 550px;
+  margin-bottom: 70px;
 }
 
 .banner .container {
@@ -137,5 +138,22 @@ body {
   line-height: 1;
   text-decoration: none;
   padding: 10px 40px;
+}
+
+.btn:hover {
+  background: #ff3610;
+}
+
+.products__title {
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 0.1em;
+  margin-bottom: 60px;
+}
+
+.products__title b {
+  color: #ff6143;
+  font-weight: 700;
 }
 /*# sourceMappingURL=index.css.map */

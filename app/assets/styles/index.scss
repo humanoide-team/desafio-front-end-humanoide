@@ -38,6 +38,7 @@ body {
   background-repeat: repeat-x, repeat-x, no-repeat;
   background-position: top -55px left 0, bottom -55px left 0, center;
   min-height: 550px;
+  margin-bottom: 70px;
 
   .container {
     display: flex;
@@ -80,4 +81,23 @@ body {
   line-height: 1;
   text-decoration: none;
   padding: 10px 40px;
+
+  &:hover {
+    background: $color-primary-dark;
+  }
+}
+
+.products {
+  &__title {
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin-bottom: 60px;
+
+    b {
+      color: $color-primary;
+      font-weight: 700;
+    }
+  }
 }
