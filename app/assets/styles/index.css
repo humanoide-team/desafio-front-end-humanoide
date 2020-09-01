@@ -1,0 +1,141 @@
+html,
+body {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+address,
+big,
+cite,
+code,
+em,
+font,
+img,
+small,
+strike,
+sub,
+sup,
+li,
+ol,
+ul,
+fieldset,
+form,
+label,
+legend,
+button,
+table,
+caption,
+tr,
+th,
+td {
+  border: none;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+}
+
+blockquote::before,
+blockquote::after {
+  content: '';
+}
+
+:root {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 30px 0;
+}
+
+.header__logo {
+  display: block;
+}
+
+.banner {
+  background-image: url(../images/confetti.svg), url(../images/confetti.svg), url(../images/banner.jpg);
+  background-size: auto auto, auto auto, auto 550px;
+  background-repeat: repeat-x, repeat-x, no-repeat;
+  background-position: top -55px left 0, bottom -55px left 0, center;
+  min-height: 550px;
+}
+
+.banner .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 550px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.banner__inner {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding-right: 35%;
+  text-align: right;
+}
+
+.banner__title {
+  font-size: 48px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.banner__title span {
+  font-weight: 700;
+}
+
+.banner__text {
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+
+.banner__text b {
+  color: #ff6143;
+  font-weight: 700;
+}
+
+.btn {
+  background: #ff6143;
+  display: inline-block;
+  border-radius: 50px;
+  color: white;
+  line-height: 1;
+  text-decoration: none;
+  padding: 10px 40px;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,83 @@
+// CSS Reset
+@import 'css-reset';
+
+// CSS Reset
+@import 'variables';
+
+:root {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+
+  &__logo {
+    display: block;
+  }
+}
+
+.banner {
+  background-image: url(../images/confetti.svg), url(../images/confetti.svg),
+    url(../images/banner.jpg);
+  background-size: auto auto, auto auto, auto 550px;
+  background-repeat: repeat-x, repeat-x, no-repeat;
+  background-position: top -55px left 0, bottom -55px left 0, center;
+  min-height: 550px;
+
+  .container {
+    display: flex;
+    min-height: 550px;
+    align-items: center;
+  }
+  &__inner {
+    flex-basis: 100%;
+    padding-right: 35%;
+    text-align: right;
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 300;
+    text-transform: uppercase;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__text {
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+
+    b {
+      color: $color-primary;
+      font-weight: 700;
+    }
+  }
+}
+
+.btn {
+  background: $color-primary;
+  display: inline-block;
+  border-radius: 50px;
+  color: white;
+  line-height: 1;
+  text-decoration: none;
+  padding: 10px 40px;
+}
