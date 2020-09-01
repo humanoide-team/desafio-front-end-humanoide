@@ -129,6 +129,7 @@ body {
   text-align: center;
   padding: 20px;
   border: 1px solid transparent;
+  transition: 0.2s;
 
   &:hover {
     border: 1px solid rgba(0, 0, 0, 0.17);

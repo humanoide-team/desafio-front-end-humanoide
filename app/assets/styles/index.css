@@ -318,6 +318,8 @@ body {
   text-align: center;
   padding: 20px;
   border: 1px solid transparent;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .card:hover {
