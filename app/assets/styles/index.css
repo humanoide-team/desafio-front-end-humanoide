@@ -84,10 +84,10 @@ body {
 }
 
 .banner {
-  background-image: url(../images/confetti.svg), url(../images/confetti.svg), url(../images/banner.jpg);
+  background-image: url(../images/confetti-banner.svg), url(../images/confetti-banner.svg), url(../images/banner.jpg);
   background-size: auto auto, auto auto, auto 550px;
   background-repeat: repeat-x, repeat-x, no-repeat;
-  background-position: top -55px left 0, bottom -55px left 0, center;
+  background-position: top -100px left 0, bottom -100px left 0, center;
   min-height: 550px;
   margin-bottom: 70px;
 }
