@@ -188,6 +188,7 @@ object {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 62.5%;
+  letter-spacing: 0.1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -224,12 +225,41 @@ body {
 }
 
 .banner {
-  background-image: url(../images/confetti-banner.svg), url(../images/confetti-banner.svg), url(../images/banner.jpg);
-  background-size: auto auto, auto auto, auto 550px;
-  background-repeat: repeat-x, repeat-x, no-repeat;
-  background-position: top -100px left 0, bottom -100px left 0, center;
   min-height: 550px;
   margin-bottom: 70px;
+  background: #f1eff1;
+  position: relative;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 85px;
+  background: url(../images/confetti-banner.svg);
+  background-position: top -100px left 0;
+  background-repeat: no-repeat;
+}
+
+.banner--home {
+  background-image: url(../images/banner.jpg);
+  background-size: auto 550px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.banner--home::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 85px;
+  background: url(../images/confetti-banner.svg);
+  background-position: bottom -100px left 0;
+  background-repeat: no-repeat;
 }
 
 .banner .container {
@@ -242,38 +272,96 @@ body {
           align-items: center;
 }
 
+.banner__container {
+  max-width: 947px;
+  -webkit-box-align: end !important;
+      -ms-flex-align: end !important;
+          align-items: flex-end !important;
+}
+
+.banner__img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  margin-right: 70px;
+}
+
+.banner__img img {
+  height: 550px;
+  width: 420px;
+}
+
 .banner__inner {
+  padding-bottom: 42px;
+}
+
+.banner__inner--home {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
   padding-right: 35%;
+  padding-bottom: 0;
   text-align: right;
 }
 
 .banner__title {
-  font-size: 48px;
+  font-size: 24px;
   font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.banner__title--home {
+  font-size: 48px;
   text-transform: uppercase;
   margin: 0;
 }
 
-.banner__title span {
+.banner__title--home span {
   font-weight: 700;
 }
 
 .banner__text {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.banner__text--home {
   font-size: 24px;
   text-transform: uppercase;
   margin-bottom: 35px;
 }
 
-.banner__text b {
+.banner__text--home b {
   color: #ff6143;
   font-weight: 700;
+}
+
+.banner__price {
+  font-size: 24px;
+  margin-bottom: 42px;
+}
+
+.banner__sizes {
+  margin-bottom: 60px;
+}
+
+.banner__sizes__title {
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.banner__sizes button {
+  font-size: 13px;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  text-align: center;
+  margin-right: 20px;
 }
 
 .btn {
   background: #ff6143;
   display: inline-block;
+  border: 1px solid #ff6143;
   border-radius: 50px;
   color: white;
   line-height: 1;
@@ -282,7 +370,17 @@ body {
 }
 
 .btn:hover {
+  border-color: #ff3610;
   background: #ff3610;
+}
+
+.btn--outline {
+  color: black;
+  background: transparent;
+}
+
+.btn--outline:hover {
+  color: white;
 }
 
 .products {
@@ -301,7 +399,6 @@ body {
   font-size: 24px;
   font-weight: 300;
   text-align: center;
-  letter-spacing: 0.1em;
   margin: 0 0 40px;
 }
 
