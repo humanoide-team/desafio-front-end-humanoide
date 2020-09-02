@@ -10,30 +10,33 @@ fetch('../../server/data.json')
 
 function cardView(cards) {
   return cards
-    .map(
-      ({ id, title, price, promotional_price, image, description, sizes }) => {
-        return `
+    .slice(0, 3)
+    .map(({ price, promotional_price, image }) => {
+      let priceBRL = new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+      }).format(price);
 
+      let promotionalPriceBRL = new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+      }).format(promotional_price);
 
-          <div class="card">
-              <div class="card__header">
-                  <img src="../${image}" alt="fantasia" class="card__img">
-              </div>
-              <div class="card__content">
-                  <p class="card__price">De <del>R$ ${price}</del> por <b>R$ ${promotional_price}</b></p>
-                  <a href="show.html" class="btn">Mais detalhes</a>
-              </div>
-
-              <!-- <p>${id}</p>
-              <p>${title}</p>
-              <p>${price}</p>
-              <p>${promotional_price}</p>
-              <p>${image}</p>
-              <p>${description}</p>
-              <p>${sizes}</p> -->
-          </div> <!-- .card -->
+      return `
+        <div class="card">
+            <div class="card__header">
+                <img src="../${image}" alt="fantasia" class="card__img">
+            </div>
+            <div class="card__content">
+                ${
+                  promotional_price != undefined
+                    ? `<p class="card__price">De <del>${priceBRL}</del> por <b>${promotionalPriceBRL}</b></p>`
+                    : `<p class="card__price">Por <b>${priceBRL}</b></p>`
+                }
+                <a href="show.html" class="btn">Mais detalhes</a>
+            </div>
+        </div> <!-- .card -->
       `;
-      },
-    )
+    })
     .join('');
 }
