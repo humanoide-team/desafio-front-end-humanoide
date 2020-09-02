@@ -353,4 +353,72 @@ body {
 .card__price b {
   color: #ff6143;
 }
+
+.footer__inner {
+  height: 160px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff6143), to(#ff3610));
+  background: linear-gradient(180deg, #ff6143 0%, #ff3610 100%);
+  padding: 45px 0;
+}
+
+.footer__inner .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 100%;
+}
+
+.footer__contact {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer__contact a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer__contact a:hover {
+  text-decoration: underline;
+}
+
+.footer__info-pay {
+  padding: 40px 0;
+  border-bottom: 1px solid #dadada;
+}
+
+.footer__info-pay .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer__credits {
+  padding: 32px 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer__credits p {
+  margin: 0;
+}
+
+.footer__credits a {
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.footer__credits a:hover {
+  text-decoration: underline;
+}
 /*# sourceMappingURL=index.css.map */
