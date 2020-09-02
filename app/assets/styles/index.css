@@ -293,6 +293,7 @@ body {
 
 .banner__inner {
   padding-bottom: 42px;
+  padding-top: 60px;
 }
 
 .banner__inner--home {
@@ -300,6 +301,7 @@ body {
       flex-basis: 100%;
   padding-right: 35%;
   padding-bottom: 0;
+  padding-top: 0;
   text-align: right;
 }
 

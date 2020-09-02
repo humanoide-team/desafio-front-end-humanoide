@@ -1,4 +1,7 @@
 const products = document.querySelector('.products__wrapper');
+const productDetails = document.querySelector('.banner__container');
+
+console.log(productDetails);
 
 fetch('../../server/data.json')
   .then((response) => response.json())
@@ -6,18 +9,19 @@ fetch('../../server/data.json')
     const results = data.products;
 
     products.innerHTML = cardView(results);
+    productDetails.innerHTML = productDetais(results[2]);
   });
 
 function cardView(cards) {
   return cards
     .slice(0, 3)
     .map(({ price, promotional_price, image }) => {
-      let priceBRL = new Intl.NumberFormat('pt-BR', {
+      const priceBRL = new Intl.NumberFormat('pt-BR', {
         style: 'currency',
         currency: 'BRL',
       }).format(price);
 
-      let promotionalPriceBRL = new Intl.NumberFormat('pt-BR', {
+      const promotionalPriceBRL = new Intl.NumberFormat('pt-BR', {
         style: 'currency',
         currency: 'BRL',
       }).format(promotional_price);
@@ -39,4 +43,48 @@ function cardView(cards) {
       `;
     })
     .join('');
+}
+
+function productDetais({
+  id,
+  title,
+  image,
+  description,
+  price,
+  promotional_price,
+}) {
+  const priceBRL = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  }).format(price);
+
+  const promotionalPriceBRL = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  }).format(promotional_price);
+
+  return `
+    <div class="banner__img">
+        <img src="../${image}" alt="fantasia ${id}">
+    </div>
+    <div class="banner__inner">
+        <h1 class="banner__title">${title}</h1>
+        <p class="banner__text">${description}</p>
+        ${
+          promotional_price != undefined
+            ? `<p class="banner__price">De <del>${priceBRL}</del> por <b>${promotionalPriceBRL}</b></p>`
+            : `<p class="banner__price">Por <b>${priceBRL}</b></p>`
+        }
+        <div class="banner__sizes">
+            <h2 class="banner__sizes__title">Escolha o tamanho</h2>
+            <div class="banner__sizes__wrapper">
+                <button class="btn btn--outline">pp</button>
+                <button class="btn btn--outline">p</button>
+                <button class="btn btn--outline">m</button>
+                <button class="btn btn--outline">g</button>
+            </div>
+        </div>
+        <a href="#" class="btn">Adicionar ao carrinho</a>
+    </div>
+  `;
 }

@@ -101,12 +101,14 @@ body {
 
   &__inner {
     padding-bottom: 42px;
+    padding-top: 60px;
   }
 
   &__inner--home {
     flex-basis: 100%;
     padding-right: 35%;
     padding-bottom: 0;
+    padding-top: 0;
     text-align: right;
   }
 
