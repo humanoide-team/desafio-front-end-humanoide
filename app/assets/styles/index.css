@@ -188,6 +188,8 @@ object {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -288,17 +290,11 @@ body {
 }
 
 .products__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.products__wrapper .card {
-  width: calc(100% / 3);
-}
-
-.products__wrapper .card:not(:last-child) {
-  margin-right: 60px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
 }
 
 .products__title {
