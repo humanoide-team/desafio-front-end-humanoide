@@ -52,6 +52,7 @@ function productDetais({
   description,
   price,
   promotional_price,
+  sizes,
 }) {
   const priceBRL = new Intl.NumberFormat('pt-BR', {
     style: 'currency',
@@ -78,10 +79,12 @@ function productDetais({
         <div class="banner__sizes">
             <h2 class="banner__sizes__title">Escolha o tamanho</h2>
             <div class="banner__sizes__wrapper">
-                <button class="btn btn--outline">pp</button>
-                <button class="btn btn--outline">p</button>
-                <button class="btn btn--outline">m</button>
-                <button class="btn btn--outline">g</button>
+                ${sizes
+                  .map(
+                    (size) =>
+                      `<button class="btn btn--outline">${size}</button>`,
+                  )
+                  .join('')}
             </div>
         </div>
         <a href="#" class="btn open-modal" onclick="openModal()">Adicionar ao carrinho</a>
