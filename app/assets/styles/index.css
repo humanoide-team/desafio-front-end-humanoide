@@ -352,6 +352,7 @@ body {
 }
 
 .banner__sizes button {
+  color: black;
   font-size: 13px;
   width: 60px;
   height: 60px;
@@ -377,7 +378,7 @@ body {
 }
 
 .btn--outline {
-  color: black;
+  color: #ff6143;
   background: transparent;
 }
 
@@ -515,5 +516,66 @@ body {
 
 .footer__credits a:hover {
   text-decoration: underline;
+}
+
+.modal {
+  z-index: 99999;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal__dialog {
+  background: white;
+  max-width: 100%;
+  padding: 100px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.modal__header {
+  margin-bottom: 80px;
+}
+
+.modal__body {
+  font-size: 28px;
+  margin: 0 auto 60px auto;
+  width: 300px;
+  max-width: 100%;
+}
+
+.modal__footer .btn + .btn {
+  margin-left: 30px;
+}
+
+.modal__title {
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #ff6143;
+  margin: 0;
+}
+
+.modal__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 /*# sourceMappingURL=index.css.map */
