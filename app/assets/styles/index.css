@@ -184,6 +184,13 @@ object {
   max-width: 100%;
 }
 
+.container {
+  width: 1100px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 :root {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
@@ -195,12 +202,6 @@ object {
 
 body {
   font-size: 1.8rem;
-}
-
-.container {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .header {
