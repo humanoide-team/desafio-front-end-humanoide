@@ -87,7 +87,7 @@ function productDetais({
                   .join('')}
             </div>
         </div>
-        <a href="#" class="btn open-modal" onclick="openModal()">Adicionar ao carrinho</a>
+        <button class="btn" onclick="openModal()">Adicionar ao carrinho</button>
     </div>
   `;
 }
