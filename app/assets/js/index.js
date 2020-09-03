@@ -84,7 +84,18 @@ function productDetais({
                 <button class="btn btn--outline">g</button>
             </div>
         </div>
-        <a href="#" class="btn">Adicionar ao carrinho</a>
+        <a href="#" class="btn open-modal" onclick="openModal()">Adicionar ao carrinho</a>
     </div>
   `;
+}
+
+// Modal
+function openModal() {
+  document.querySelector('.modal').style.display = 'flex';
+  document.querySelector('body').style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.querySelector('.modal').style.display = 'none';
+  document.querySelector('body').style.overflow = 'visible';
 }
