@@ -1,5 +1,11 @@
 const products = document.querySelector('.products__wrapper');
-const productDetails = document.querySelector('.banner__container');
+const bannerImg = document.querySelector('.banner__img img');
+const bannerTitle = document.querySelector('.banner__title');
+const bannerText = document.querySelector('.banner__text');
+const bannerPrice = document.querySelector('.banner__price');
+const bannerSizesWrapper = document.querySelector('.banner__sizes__wrapper');
+const addCart = document.querySelector('.add-cart');
+const keepBuy = document.querySelectorAll('.modal__footer button');
 
 fetch('../../server/data.json')
   .then((response) => response.json())
@@ -7,8 +13,42 @@ fetch('../../server/data.json')
     const results = data.products;
 
     products.innerHTML = cardView(results);
-    productDetails.innerHTML = productDetais(results[2]);
+    showInfo(results[2]);
   });
+
+function showInfo({
+  id,
+  title,
+  image,
+  description,
+  price,
+  promotional_price,
+  sizes,
+}) {
+  const priceBRL = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  }).format(price);
+
+  const promotionalPriceBRL = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  }).format(promotional_price);
+
+  bannerImg.setAttribute('src', `../${image}`);
+  bannerImg.setAttribute('alt', `Fantasia ${id}`);
+
+  bannerTitle.innerHTML = title;
+  bannerText.innerHTML = description;
+
+  promotional_price != undefined
+    ? (bannerPrice.innerHTML = `De <del>${priceBRL}</del> por <b>${promotionalPriceBRL}</b>`)
+    : (bannerPrice.innerHTML = `Por <b>${priceBRL}</b>`);
+
+  bannerSizesWrapper.innerHTML = sizes
+    .map((size) => `<button class="btn btn--outline">${size}</button>`)
+    .join('');
+}
 
 function cardView(cards) {
   return cards
@@ -43,53 +83,6 @@ function cardView(cards) {
     .join('');
 }
 
-function productDetais({
-  id,
-  title,
-  image,
-  description,
-  price,
-  promotional_price,
-  sizes,
-}) {
-  const priceBRL = new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
-  }).format(price);
-
-  const promotionalPriceBRL = new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
-  }).format(promotional_price);
-
-  return `
-    <div class="banner__img">
-        <img src="../${image}" alt="fantasia ${id}">
-    </div>
-    <div class="banner__inner">
-        <h1 class="banner__title">${title}</h1>
-        <p class="banner__text">${description}</p>
-        ${
-          promotional_price != undefined
-            ? `<p class="banner__price">De <del>${priceBRL}</del> por <b>${promotionalPriceBRL}</b></p>`
-            : `<p class="banner__price">Por <b>${priceBRL}</b></p>`
-        }
-        <div class="banner__sizes">
-            <h2 class="banner__sizes__title">Escolha o tamanho</h2>
-            <div class="banner__sizes__wrapper">
-                ${sizes
-                  .map(
-                    (size) =>
-                      `<button class="btn btn--outline">${size}</button>`,
-                  )
-                  .join('')}
-            </div>
-        </div>
-        <button class="btn" onclick="openModal()">Adicionar ao carrinho</button>
-    </div>
-  `;
-}
-
 // Modal
 function openModal() {
   document.querySelector('.modal').style.display = 'flex';
@@ -100,3 +93,8 @@ function closeModal() {
   document.querySelector('.modal').style.display = 'none';
   document.querySelector('body').style.overflow = 'visible';
 }
+
+addCart.addEventListener('click', openModal);
+keepBuy.forEach((element) => {
+  element.addEventListener('click', closeModal);
+});
