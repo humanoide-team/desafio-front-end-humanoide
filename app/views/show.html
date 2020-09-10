@@ -10,29 +10,39 @@
 
 <body>
     <header class="header container" role="banner">
-        <h1 class="header__brand">
+        <p class="header__brand">
             <a href="index.html" rel="home">
                 <img src="../assets/images/logo.svg" alt="Logotipo CarnaStore" class="header__logo" width="253"
                     height="41">
             </a>
-        </h1>
+        </p>
 
         <p class="header__slogan">Venha ser felix no carnaval!</p>
     </header><!-- .header -->
 
     <main>
-        <section class="banner banner--home">
-            <div class="container">
-                <div class="banner__inner banner__inner--home">
-                    <h2 class="banner__title banner__title--home">Ainda dá tempo de <span>ser felix</span></h2>
-                    <p class="banner__text banner__text--home">Fantasias premium por <b>$ 100,00</b></p>
-                    <a href="show.html" class="btn">Comprar agora</a>
+        <section class="banner">
+            <div class="container banner__container">
+                <div class="banner__img">
+                    <img src="" alt="">
+                </div>
+                <div class="banner__inner">
+                    <h1 class="banner__title"></h1>
+                    <p class="banner__text"></p>
+                    <p class="banner__price"></p>
+
+                    <div class="banner__sizes">
+                        <h2 class="banner__sizes__title">Escolha o tamanho</h2>
+                        <div class="banner__sizes__wrapper">
+                        </div>
+                    </div>
+                    <button class="btn add-cart">Adicionar ao carrinho</button>
                 </div>
             </div>
         </section><!-- .banner -->
 
         <section class="products container">
-            <h2 class="products__title">Se você comprar eu te dou um <b>beijo (só se quixer)</b></h2>
+            <h2 class="products__title">Outras fantasias que vc vai gostar</h2>
 
             <div class="products__wrapper"></div>
         </section><!-- .products -->
@@ -67,7 +77,23 @@
         </div>
     </footer><!-- .footer -->
 
-    <script src="../assets/js/index.js" type="module"></script>
+    <div class="modal">
+        <div class="modal__dialog">
+            <div class="modal__header">
+                <img src="../assets/images/confetti.svg" alt="confete">
+                <h2 class="modal__title">Vivaaaa!</h2>
+            </div>
+            <div class="modal__body">
+                <p>Adicionamos o item no seu carrinho!</p>
+            </div>
+            <div class="modal__footer">
+                <button class="btn btn--outline">Continuar comprando</button>
+                <button class="btn">Ir para o carrinho</button>
+            </div>
+        </div>
+    </div><!-- .modal -->
+
+    <script src="../assets/js/show.js" type="module"></script>
 </body>
 
 </html>
