@@ -1,5 +1,4 @@
-{
-  "products": [
+export const products = [
     {
       "id": 1,
       "title": "Fantasia 1",
@@ -50,5 +49,5 @@
         "G"
       ]
     }
-  ]
-}
+  ];
+

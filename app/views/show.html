@@ -2,33 +2,26 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Home</title>
+        <title>Show</title>
 
         <link rel="stylesheet" href="../assets/styles/index.css">
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" defer></script>
-        <script type="text/javascript" src="../assets/js/index.js" defer></script>
-        
+        <script type="text/javascript" src="../assets/js/show.js" defer></script>
+
     </head>
     <body>
-        
         <div class="top__nav">
             <img src="../../layout/images/logo.svg" class="logo"/>
             <h4>Venha ser feliz no carnaval!</h4>
         </div>
 
-        <div class="banner__home">
-            <img src="../../layout/images/confetti-banner.svg" class="banner__svg__top"/>
-                
-                <h2>Ainda dá tempo de <b>ser feliz</b></h2>
-                <h3>Fantasias premium por <h4>$100,00</h4></h3>
-                <button><a href="#">Comprar Agora</a></button>
-        
-            <img src="../../layout/images/confetti-banner.svg" class="banner__svg__bottom"/>            
+        <div id="banner" class="banner__show">
+                          
         </div>
 
         <div id="container" class="container__products">
-            <h2>Compre uma fantasia</h2>
+            <h2>Outras fantasias que você vai gostar</h2>
         </div>
 
         <div class="bottom__info">
@@ -40,7 +33,18 @@
             <img src="../../layout/images/cards.svg" class="cards">
             <img src="../../layout/images/security-icon.svg" class="security_icon">
         </div>
-
+        <!--Creates the popup body-->
+        <div class="popup-overlay">
+            <!--Creates the popup content-->
+            <div class="popup-content">
+                <img src="../../layout/images/confetti.svg">
+                <h2>VIVA!</h2>
+                <p> Adicionamos o item no seu carrinho!</p>
+                <!--popup's close button-->
+                <button class="continue__shopping">Continuar comprando</button> 
+                <button class="go__cart">Ir para o carrinho</button> 
+            </div>
+        </div>
         <div class="bottom__page"></div>
     </body>
 </html>
